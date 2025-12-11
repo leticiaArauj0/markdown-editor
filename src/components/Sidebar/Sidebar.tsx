@@ -1,6 +1,6 @@
-import { useTheme } from '../../hooks/useThema';
+import { useTheme } from '@/hooks/useTheme';
 import { SunIcon, MoonIcon } from '@phosphor-icons/react';
-import styles from './Sidebar.module.css';
+import styles from '@/components/Sidebar/Sidebar.module.css';
 
 export function Sidebar() {
   const { theme, toggleTheme } = useTheme();
