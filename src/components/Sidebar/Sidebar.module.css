@@ -1,0 +1,32 @@
+.sidebar {
+  width: 20%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-secondary); 
+  border-right: 1px solid var(--border-color);
+}
+
+.themeButton {
+  height: 3rem;
+  width: 6rem;
+
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary); 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  border: none;
+  cursor: pointer;
+  transition: 0.1s ease-out;
+}
+
+.themeButton:hover {
+  transform: translateY(-3px);
+}
