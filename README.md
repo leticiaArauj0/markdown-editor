@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# 📝 Markdown Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![React](https://img.shields.io/badge/React-18-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Vite](https://img.shields.io/badge/Vite-5-purple)
 
-Currently, two official plugins are available:
+> 🔗 **Acesse o projeto online:** [markdown-editor-bay-zeta.vercel.app](https://markdown-editor-bay-zeta.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Um editor de Markdown funcional e responsivo. O projeto permite criar, editar, gerenciar e excluir documentos Markdown com persistência de dados local e suporte a temas (Dark/Light).
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🚀 Core
+- **CRUD Completo:** Criação, Leitura, Atualização e Exclusão de documentos.
+- **Persistência de Dados:** Todos os documentos são salvos automaticamente no `localStorage` do navegador.
+- **Renomeação Inline:** Permite renomear documentos diretamente na listagem da Home.
+- **Gerenciamento de Estado:** Uso da **Context API** para gerenciar documentos globalmente.
 
-## Expanding the ESLint configuration
+### ✍️ Editor
+- **Split View (Desktop):** Edição e pré-visualização lado a lado em tempo real.
+- **Toolbar de Formatação:** Botões para inserir Negrito, Itálico, Títulos, Listas, Códigos e Links.
+- **Atalhos de Teclado:** Suporte para produtividade (veja tabela abaixo).
+- **Auto-Save:** Feedback visual de salvamento automático.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🎨 UI/UX
+- **Tema Dark/Light:** Alternância de tema com persistência da preferência do usuário.
+- **Responsividade Total:** Layout adaptável para Desktop, Tablet e Mobile.
+- **Sidebar Responsiva:** Menu lateral fixo no Desktop e estilo "Drawer/Hambúrguer" no Mobile.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Core:** [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/)
+- **Estilização:** CSS Modules (CSS puro escopado)
+- **Roteamento:** [React Router DOM](https://reactrouter.com/)
+- **Renderização Markdown:** [React Markdown](https://github.com/remarkjs/react-markdown)
+- **Ícones:** [Phosphor Icons](https://phosphoricons.com/)
+- **Utilitários:** `uuid` (Geração de IDs únicos)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⌨️ Atalhos de Teclado
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+| Atalho | Ação |
+| :--- | :--- |
+| `Ctrl` + `B` | **Negrito** |
+| `Ctrl` + `I` | *Itálico* |
+| `Ctrl` + `H` | # Título |
+| `Ctrl` + `U` | - Lista |
+| `Ctrl` + `J` | `Código` |
+| `Ctrl` + `K` | [Link](url) |
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Como rodar o projeto
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Pré-requisitos: Você precisa ter o [Node.js](https://nodejs.org/) instalado.
+
+```bash
+# 1. Clone o repositório
+git clone [https://github.com/seu-usuario/markdown-editor.git](https://github.com/seu-usuario/markdown-editor.git)
+
+# 2. Entre na pasta do projeto
+cd markdown-editor
+
+# 3. Instale as dependências
+npm install
+
+# 4. Rode o projeto em modo de desenvolvimento
+npm run dev
