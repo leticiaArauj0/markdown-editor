@@ -1,32 +1,33 @@
 .sidebar {
-  width: 20%;
+  width: 24rem;
   height: 100vh;
 
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 
   background-color: var(--bg-secondary); 
+
+  padding: 2rem 1.5rem 2rem 2rem;
   border-right: 1px solid var(--border-color);
 }
 
-.themeButton {
-  height: 3rem;
-  width: 6rem;
-
-  font-size: 1.3rem;
-  color: var(--text-secondary);
-  background-color: var(--bg-secondary); 
-
+.logo {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 0.5rem;
-
-  border: none;
+  color: var(--brand-color);
   cursor: pointer;
-  transition: 0.1s ease-out;
 }
 
-.themeButton:hover {
-  transform: translateY(-3px);
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-left: 0.7rem;
+}
+
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }

@@ -10,7 +10,7 @@ interface Document {
 
 interface DocumentsContextType {
   documents: Document[];
-  createDocument: () => void;
+  createDocument: () => string;
   updateDocumentTitle: (id: string, newTitle: string) => void;
   updateDocumentContent: (id: string, newContent: string) => void;
   deleteDocument: (id: string) => void;
@@ -52,6 +52,8 @@ export function DocumentsProvider({ children }: { children: ReactNode }) {
     };
 
     setDocuments((state) => [newDoc, ...state]); 
+
+    return newDoc.id;
   }
 
   function updateDocumentTitle(id: string, newTitle: string) {
