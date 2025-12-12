@@ -26,7 +26,7 @@ Um editor de Markdown funcional e responsivo. O projeto permite criar, editar, g
 ### 🎨 UI/UX
 - **Tema Dark/Light:** Alternância de tema com persistência da preferência do usuário.
 - **Responsividade Total:** Layout adaptável para Desktop, Tablet e Mobile.
-- **Sidebar Responsiva:** Menu lateral fixo no Desktop e estilo "Drawer/Hambúrguer" no Mobile.
+- **Sidebar Responsiva:** Menu lateral estilo "Drawer/Hambúrguer".
 
 ## 🛠 Tecnologias Utilizadas
 
