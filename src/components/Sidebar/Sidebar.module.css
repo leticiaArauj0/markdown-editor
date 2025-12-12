@@ -10,6 +10,19 @@
 
   padding: 2rem 1.5rem 2rem 2rem;
   border-right: 1px solid var(--border-color);
+
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sidebarIcon {
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.sidebarIcon:hover {
+  opacity: 0.7;
 }
 
 .logo {

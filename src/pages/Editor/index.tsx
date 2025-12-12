@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import { CheckCircleIcon } from '@phosphor-icons/react';
+import { CheckCircleIcon, ListIcon } from '@phosphor-icons/react';
 import { useDocuments } from '@/context/DocumentsContext';
 import { Sidebar } from '@/components/Sidebar/Sidebar';
 import { ToogleTheme } from '@/components/ToogleTheme/ToogleTheme';
@@ -9,9 +9,11 @@ import { Toolbar } from '@/components/Toolbar/Toolbar';
 import styles from './styles.module.css';
 
 export function Editor() {
-  const { id } = useParams();
   const navigate = useNavigate();
+  const { id } = useParams();
   const { getDocumentById, updateDocumentContent, updateDocumentTitle } = useDocuments();
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const document = getDocumentById(id || '');
@@ -87,12 +89,16 @@ export function Editor() {
     }
   }
 
+  function handleOpenSidebar() {
+    setIsSidebarOpen(!isSidebarOpen);
+  }
+
   return (
     <div className={styles.container}>
-        <Sidebar/>
         <div className={styles.editorContainer}>
           <header className={styles.header}>
             <div className={styles.titleContainer}>
+              {isSidebarOpen ? <Sidebar onClick={handleOpenSidebar}/> : <ListIcon onClick={handleOpenSidebar} size={32} className={styles.sidebarIcon}/>}
               <input
                 className={styles.titleInput}
                 value={document.title}

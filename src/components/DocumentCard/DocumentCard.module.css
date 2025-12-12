@@ -87,3 +87,25 @@
   background-color: var(--bg-primary);
   color: var(--text-primary);
 }
+
+@media screen and (max-width: 810px) {
+  .card {
+    height: 5rem;
+  }
+
+  .title {
+    font-size: 0.875rem;
+  }
+  
+  .titleInput {
+    font-size: 0.875rem;
+  }
+
+  .date {
+    display: none;
+  }
+
+  .containerIcon {
+    padding: 0.5rem;
+  }
+}
