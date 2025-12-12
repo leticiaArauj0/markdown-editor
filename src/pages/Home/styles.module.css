@@ -1,0 +1,61 @@
+.container {
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 7%;
+}
+
+main {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.containerTop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    height: 3rem;
+    width: 14rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: var(--bg-primary);
+    background-color: var(--brand-color);
+
+    font-size: 1.25rem;
+    font-weight: 500;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.button:hover {
+    opacity: 0.7;
+}
+
+.containerDocumentCards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.emptyState {
+    font-size: 2rem;
+    color: var(--brand-color);
+}
