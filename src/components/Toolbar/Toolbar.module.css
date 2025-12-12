@@ -1,0 +1,40 @@
+.toolbar {
+    background-color: var(--bg-secondary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.5rem 1rem;
+    
+    border-bottom: 1px solid var(--border-color);
+}
+
+.toolButton {
+    background: transparent;
+    color: var(--text-secondary);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+    
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.toolButton:hover {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.divider {
+    width: 1px;
+    height: 90%;
+    background-color: var(--border-color);
+    margin: 0 0.5rem;
+}

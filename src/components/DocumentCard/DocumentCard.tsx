@@ -9,12 +9,13 @@ interface DocumentCardProps {
   updatedAt: string;
   onRename: (id: string, newTitle: string) => void;
   onDelete: (id: string) => void;
+  startEditing?: boolean;
 }
 
-export function DocumentCard({ id, title, updatedAt, onRename, onDelete }: DocumentCardProps) {
+export function DocumentCard({ id, title, updatedAt, onRename, onDelete, startEditing = false }: DocumentCardProps) {
   const navigate = useNavigate();
 
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(startEditing);
   const [tempTitle, setTempTitle] = useState(title);
   
   const inputRef = useRef<HTMLInputElement>(null);

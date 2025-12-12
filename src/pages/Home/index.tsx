@@ -1,25 +1,29 @@
-import { PlusIcon } from "@phosphor-icons/react";
 import { useDocuments } from '@/context/DocumentsContext';
 import { DocumentCard } from "@/components/DocumentCard/DocumentCard";
+import { ToogleTheme } from "@/components/ToogleTheme/ToogleTheme";
+import { AddButton } from "@/components/AddButton/AddButton";
 import styles from './styles.module.css';
+import { useState } from 'react';
 
 export function Home() {
   const { documents, createDocument, deleteDocument, updateDocumentTitle } = useDocuments();
+  const [newDocId, setNewDocId] = useState<string | null>(null);
 
   function handleCreate() {
-    createDocument();
+    const createdId = createDocument();
+    setNewDocId(createdId);
   }
 
   return(
     <div className={styles.container}>
-      <main>
+      <main className={styles.main}>
+        <div className={styles.toogle}>
+          <ToogleTheme/>
+        </div>
         <div className={styles.containerTop}>
           <h1>Meus Documentos</h1>
           
-          <button className={styles.button} onClick={handleCreate}>
-            <PlusIcon size={20} weight="bold"/>
-            Novo Documento
-          </button>
+          <AddButton onClick={handleCreate}/>
         </div>
 
         <div className={styles.containerDocumentCards}>
@@ -32,6 +36,7 @@ export function Home() {
                 updatedAt={new Date(doc.updatedAt).toLocaleDateString('pt-BR')} 
                 onDelete={deleteDocument} 
                 onRename={updateDocumentTitle} 
+                startEditing={newDocId ? true : false}
               />
             ))
           ) : (
